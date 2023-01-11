@@ -1,0 +1,18 @@
+:root {
+  --font-serif: "Roboto Slab", serif;
+  --font-sans: "Roboto", sans-serif;
+  --font-size-base: 16px;
+  --font-size-l: 18px;
+  --font-size-s: 14px;
+  --font-size-xs: 12px;
+  --line-height-base: 20px;
+  --line-height-s: 16px;
+  --primary-gray: #fef5ea;
+  --secondary-gray: #eeeeee;
+  --font-gray: #4a4b4c;
+  --secondary-black: #2f3337;
+  --primary-black: #2d2d2d;
+  --primary-blue: #185a8e;
+  --secondary-red: #c26464;
+  --primary-red: #921f1f;
+}/*# sourceMappingURL=variables.css.map */

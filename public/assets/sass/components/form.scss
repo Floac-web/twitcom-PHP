@@ -1,0 +1,38 @@
+
+.auth{
+
+    .auth__wrapper{
+        margin: 50px auto 0px;
+        width: 100%;
+        max-width: 500px;
+        padding: 20px 10px;
+        box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    }
+
+    .auth__title{
+        text-align: center;
+    }
+
+}
+
+
+.form{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .form__input{
+        width: 100%;
+        max-width: 500px;
+        border: none;
+        height: 35px;
+        border-bottom: 1px solid var(--secondary-gray);
+    }
+
+    .form__textarea{
+        height: 10rem;
+        overflow-y: auto;
+        resize: none;
+    }
+}
