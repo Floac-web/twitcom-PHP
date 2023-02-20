@@ -1,6 +1,7 @@
 <?php
 
-class App{
+class App
+{
 
     private $controller = "home";
     private $method = "index";
@@ -10,33 +11,33 @@ class App{
     {
         $url = $this->splitURL();
 
-        if(file_exists("../app/controllers/". strtolower($url[0]) .".php")){
+        if (file_exists("../app/controllers/" . strtolower($url[0]) . ".php")) {
             $this->controller = strtolower($url[0]);
             unset($url[0]);
         }
 
-        require "../app/controllers/". $this->controller .".php";
+        require "../app/controllers/" . $this->controller . ".php";
         $this->controller = new $this->controller;
 
-        if(isset($url[1])){
-            if(method_exists($this->controller,$url[1])){
+        if (isset($url[1])) {
+            if (method_exists($this->controller, $url[1])) {
                 $this->method = $url[1];
                 unset($url[1]);
             }
         }
 
-        
-        if(is_array($url)){
+
+        if (is_array($url)) {
             $this->params = (array_values($url));
         }
-        
 
-        call_user_func_array([$this->controller,$this->method],$this->params);
-        
+
+        call_user_func_array([$this->controller, $this->method], $this->params);
     }
 
-    private function splitURL(){
-        $url = isset($_GET["url"]) ? explode("/", filter_var(trim($_GET["url"],"/"),FILTER_SANITIZE_URL)) : "home";
-        return $url;   
+    private function splitURL()
+    {
+        $url = isset($_GET["url"]) ? explode("/", filter_var(trim($_GET["url"], "/"), FILTER_SANITIZE_URL)) : "home";
+        return $url;
     }
 }
